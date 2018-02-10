@@ -553,9 +553,13 @@ ngx_stream_upstream_server_resolver(ngx_conf_t *cf, ngx_command_t *cmd, void *co
         return "is duplicate";
     }
 
+#if (NGX_STREAM_UPSTREAM_ZONE)
     if (uscf->shm_zone == NULL) {
         return "must reside in the shared memory";
     }
+#else
+    return "must enables upstream zone";
+#endif
 
     dcf->original_init_upstream = uscf->peer.init_upstream ? uscf->peer.init_upstream:
                                   ngx_stream_upstream_init_round_robin;

@@ -90,5 +90,6 @@ All rights reserved.
 See Also
 ========
 * http://nginx.org/en/docs/stream/ngx_stream_upstream_module.html#server
+* https://github.com/vislee/ngx_http_upstream_dynamic_module
 
 [Back to TOC](#table-of-contents)
